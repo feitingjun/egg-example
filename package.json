@@ -1,0 +1,28 @@
+{
+  "name": "egg",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "egg-bin dev",
+    "debug": "egg-bin debug",
+    "start": "egg-scripts start --daemon",
+    "stop": "egg-scripts stop",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "egg": "^2.26.0",
+    "egg-passport": "^2.1.1",
+    "egg-scripts": "^2.12.0",
+    "egg-sequelize": "^5.2.1",
+    "mysql2": "^2.1.0",
+    "passport-local": "^1.0.0"
+  },
+  "devDependencies": {
+    "egg-bin": "^4.14.1",
+    "sequelize-cli": "^5.5.1"
+  }
+}
