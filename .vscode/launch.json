@@ -5,7 +5,7 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Launch Egg",
+            "name": "Egg服务器",
             "type": "node",
             "request": "launch",
             "cwd": "${workspaceRoot}",

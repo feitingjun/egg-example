@@ -1,0 +1,1 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([[4],{B8Qk:function(n,e,p){"use strict";p.r(e);var t=p("ZZRV"),a=p.n(t);p("p6UI");e["default"]=n=>a.a.createElement("div",null,"1111")},p6UI:function(n,e,p){}}]);

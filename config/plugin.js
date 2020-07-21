@@ -11,8 +11,12 @@ module.exports = {
         enable: true,
         package: 'egg-passport'
     },
-    // passportLocal: {
-    //     enable: true,
-    //     package: 'egg-passport-local',
-    // }
+    jwt: {
+      enable: true,
+      package: 'egg-jwt'
+    },
+    routerPlus: {
+      enable: true,
+      package: 'egg-router-plus',
+    }
 }

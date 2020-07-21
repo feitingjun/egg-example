@@ -1,5 +1,5 @@
 const colors = require('colors');
-const LocalStrategy = require('passport-local').Strategy;
+// const LocalStrategy = require('passport-local').Strategy;
 
 class AppBootHook {
     constructor(app) {
@@ -17,37 +17,7 @@ class AppBootHook {
         // console.log('配置文件加载完成'.green);
     }
     async didLoad() {
-        // 所有的配置已经加载完毕
-        // 可以用来加载应用自定义的文件，启动自定义的服务
-        // console.log('文件加载完成'.green);
-        const app = this.app;
-        app.passport.use(new LocalStrategy({
-            passReqToCallback: true,
-        }, (req, username, password, done) => {
-            // format user
-            const user = {
-                provider: 'local',
-                username,
-                password,
-            };
-            app.passport.doVerify(req, user, done);
-        }));
-    
-        // 处理用户信息验证
-        app.passport.verify(async (ctx, { username, password }) => {
-            const user = await ctx.model.User.findOne({ where: { username } })
-            if(!user) ctx.throw('用户不存在');
-            if(password !== user.password) ctx.throw('密码错误');
-            return user.id;
-        });
-        //用户信息序列化到session(接受上一个函数给予的user，保存到session)
-        app.passport.serializeUser(async (ctx, id) => {
-            return {id: id};
-        });
-        //session反序列化到用户(这个函数是从session反查到用户);
-        app.passport.deserializeUser(async (ctx, { id }) => {
-            return { id };
-        });
+        
     }
 
     async willReady() {

@@ -59,6 +59,10 @@ module.exports = () => {
                         message = `请求路径未找到  ${ctx.method} ${ctx.url}`;
                         break;
                     }
+                    if(err.status === 401) {
+                        message = `未登录`;
+                        break;
+                    }
                     if(!err.status){
                         message = err.message;
                         break;

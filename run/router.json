@@ -6,9 +6,10 @@
       "GET"
     ],
     "paramNames": [],
-    "path": "/user",
-    "regexp": "/^\\/user(?:\\/(?=$))?$/",
+    "path": "/admin/user",
+    "regexp": "/^\\/admin\\/user(?:\\/(?=$))?$/",
     "stack": [
+      "middleware",
       "wrappedController"
     ]
   },
@@ -18,9 +19,10 @@
       "POST"
     ],
     "paramNames": [],
-    "path": "/user",
-    "regexp": "/^\\/user(?:\\/(?=$))?$/",
+    "path": "/admin/user",
+    "regexp": "/^\\/admin\\/user(?:\\/(?=$))?$/",
     "stack": [
+      "middleware",
       "wrappedController"
     ]
   },
@@ -42,9 +44,10 @@
         "pattern": "[^\\/]+?"
       }
     ],
-    "path": "/user/:id",
-    "regexp": "/^\\/user\\/((?:[^\\/]+?))(?:\\/(?=$))?$/",
+    "path": "/admin/user/:id",
+    "regexp": "/^\\/admin\\/user\\/((?:[^\\/]+?))(?:\\/(?=$))?$/",
     "stack": [
+      "middleware",
       "wrappedController"
     ]
   },
@@ -66,9 +69,10 @@
         "pattern": "[^\\/]+?"
       }
     ],
-    "path": "/user/:id",
-    "regexp": "/^\\/user\\/((?:[^\\/]+?))(?:\\/(?=$))?$/",
+    "path": "/admin/user/:id",
+    "regexp": "/^\\/admin\\/user\\/((?:[^\\/]+?))(?:\\/(?=$))?$/",
     "stack": [
+      "middleware",
       "wrappedController"
     ]
   },
@@ -89,9 +93,37 @@
         "pattern": "[^\\/]+?"
       }
     ],
-    "path": "/user/:id",
-    "regexp": "/^\\/user\\/((?:[^\\/]+?))(?:\\/(?=$))?$/",
+    "path": "/admin/user/:id",
+    "regexp": "/^\\/admin\\/user\\/((?:[^\\/]+?))(?:\\/(?=$))?$/",
     "stack": [
+      "middleware",
+      "wrappedController"
+    ]
+  },
+  {
+    "name": "s",
+    "methods": [
+      "HEAD",
+      "GET"
+    ],
+    "paramNames": [],
+    "path": "/admin/menu",
+    "regexp": "/^\\/admin\\/menu(?:\\/(?=$))?$/",
+    "stack": [
+      "middleware",
+      "wrappedController"
+    ]
+  },
+  {
+    "name": "s",
+    "methods": [
+      "POST"
+    ],
+    "paramNames": [],
+    "path": "/admin/menu",
+    "regexp": "/^\\/admin\\/menu(?:\\/(?=$))?$/",
+    "stack": [
+      "middleware",
       "wrappedController"
     ]
   },
@@ -102,35 +134,10 @@
       "GET"
     ],
     "paramNames": [],
-    "path": "/info",
-    "regexp": "/^\\/info(?:\\/(?=$))?$/",
+    "path": "/admin/info",
+    "regexp": "/^\\/admin\\/info(?:\\/(?=$))?$/",
     "stack": [
-      "wrappedController"
-    ]
-  },
-  {
-    "name": null,
-    "methods": [
-      "HEAD",
-      "GET"
-    ],
-    "paramNames": [],
-    "path": "/login_fail",
-    "regexp": "/^\\/login_fail(?:\\/(?=$))?$/",
-    "stack": [
-      "wrappedController"
-    ]
-  },
-  {
-    "name": null,
-    "methods": [
-      "HEAD",
-      "GET"
-    ],
-    "paramNames": [],
-    "path": "/logout",
-    "regexp": "/^\\/logout(?:\\/(?=$))?$/",
-    "stack": [
+      "middleware",
       "wrappedController"
     ]
   },
@@ -140,8 +147,316 @@
       "POST"
     ],
     "paramNames": [],
-    "path": "/login",
-    "regexp": "/^\\/login(?:\\/(?=$))?$/",
+    "path": "/admin/login",
+    "regexp": "/^\\/admin\\/login(?:\\/(?=$))?$/",
+    "stack": [
+      "wrappedController"
+    ]
+  },
+  {
+    "name": "s",
+    "methods": [
+      "HEAD",
+      "GET"
+    ],
+    "paramNames": [],
+    "path": "/admin/user",
+    "regexp": "/^\\/admin\\/user(?:\\/(?=$))?$/",
+    "stack": [
+      "middleware",
+      "wrappedController"
+    ]
+  },
+  {
+    "name": "s",
+    "methods": [
+      "POST"
+    ],
+    "paramNames": [],
+    "path": "/admin/user",
+    "regexp": "/^\\/admin\\/user(?:\\/(?=$))?$/",
+    "stack": [
+      "middleware",
+      "wrappedController"
+    ]
+  },
+  {
+    "name": null,
+    "methods": [
+      "HEAD",
+      "GET"
+    ],
+    "paramNames": [
+      {
+        "name": "id",
+        "prefix": "/",
+        "delimiter": "/",
+        "optional": false,
+        "repeat": false,
+        "partial": false,
+        "asterisk": false,
+        "pattern": "[^\\/]+?"
+      }
+    ],
+    "path": "/admin/user/:id",
+    "regexp": "/^\\/admin\\/user\\/((?:[^\\/]+?))(?:\\/(?=$))?$/",
+    "stack": [
+      "middleware",
+      "wrappedController"
+    ]
+  },
+  {
+    "name": null,
+    "methods": [
+      "PATCH",
+      "PUT"
+    ],
+    "paramNames": [
+      {
+        "name": "id",
+        "prefix": "/",
+        "delimiter": "/",
+        "optional": false,
+        "repeat": false,
+        "partial": false,
+        "asterisk": false,
+        "pattern": "[^\\/]+?"
+      }
+    ],
+    "path": "/admin/user/:id",
+    "regexp": "/^\\/admin\\/user\\/((?:[^\\/]+?))(?:\\/(?=$))?$/",
+    "stack": [
+      "middleware",
+      "wrappedController"
+    ]
+  },
+  {
+    "name": "destroy_",
+    "methods": [
+      "DELETE"
+    ],
+    "paramNames": [
+      {
+        "name": "id",
+        "prefix": "/",
+        "delimiter": "/",
+        "optional": false,
+        "repeat": false,
+        "partial": false,
+        "asterisk": false,
+        "pattern": "[^\\/]+?"
+      }
+    ],
+    "path": "/admin/user/:id",
+    "regexp": "/^\\/admin\\/user\\/((?:[^\\/]+?))(?:\\/(?=$))?$/",
+    "stack": [
+      "middleware",
+      "wrappedController"
+    ]
+  },
+  {
+    "name": "s",
+    "methods": [
+      "HEAD",
+      "GET"
+    ],
+    "paramNames": [],
+    "path": "/admin/menu",
+    "regexp": "/^\\/admin\\/menu(?:\\/(?=$))?$/",
+    "stack": [
+      "middleware",
+      "wrappedController"
+    ]
+  },
+  {
+    "name": "s",
+    "methods": [
+      "POST"
+    ],
+    "paramNames": [],
+    "path": "/admin/menu",
+    "regexp": "/^\\/admin\\/menu(?:\\/(?=$))?$/",
+    "stack": [
+      "middleware",
+      "wrappedController"
+    ]
+  },
+  {
+    "name": null,
+    "methods": [
+      "HEAD",
+      "GET"
+    ],
+    "paramNames": [],
+    "path": "/admin/info",
+    "regexp": "/^\\/admin\\/info(?:\\/(?=$))?$/",
+    "stack": [
+      "middleware",
+      "wrappedController"
+    ]
+  },
+  {
+    "name": null,
+    "methods": [
+      "POST"
+    ],
+    "paramNames": [],
+    "path": "/admin/login",
+    "regexp": "/^\\/admin\\/login(?:\\/(?=$))?$/",
+    "stack": [
+      "wrappedController"
+    ]
+  },
+  {
+    "name": "s",
+    "methods": [
+      "HEAD",
+      "GET"
+    ],
+    "paramNames": [],
+    "path": "/admin/user",
+    "regexp": "/^\\/admin\\/user(?:\\/(?=$))?$/",
+    "stack": [
+      "middleware",
+      "wrappedController"
+    ]
+  },
+  {
+    "name": "s",
+    "methods": [
+      "POST"
+    ],
+    "paramNames": [],
+    "path": "/admin/user",
+    "regexp": "/^\\/admin\\/user(?:\\/(?=$))?$/",
+    "stack": [
+      "middleware",
+      "wrappedController"
+    ]
+  },
+  {
+    "name": null,
+    "methods": [
+      "HEAD",
+      "GET"
+    ],
+    "paramNames": [
+      {
+        "name": "id",
+        "prefix": "/",
+        "delimiter": "/",
+        "optional": false,
+        "repeat": false,
+        "partial": false,
+        "asterisk": false,
+        "pattern": "[^\\/]+?"
+      }
+    ],
+    "path": "/admin/user/:id",
+    "regexp": "/^\\/admin\\/user\\/((?:[^\\/]+?))(?:\\/(?=$))?$/",
+    "stack": [
+      "middleware",
+      "wrappedController"
+    ]
+  },
+  {
+    "name": null,
+    "methods": [
+      "PATCH",
+      "PUT"
+    ],
+    "paramNames": [
+      {
+        "name": "id",
+        "prefix": "/",
+        "delimiter": "/",
+        "optional": false,
+        "repeat": false,
+        "partial": false,
+        "asterisk": false,
+        "pattern": "[^\\/]+?"
+      }
+    ],
+    "path": "/admin/user/:id",
+    "regexp": "/^\\/admin\\/user\\/((?:[^\\/]+?))(?:\\/(?=$))?$/",
+    "stack": [
+      "middleware",
+      "wrappedController"
+    ]
+  },
+  {
+    "name": "destroy_",
+    "methods": [
+      "DELETE"
+    ],
+    "paramNames": [
+      {
+        "name": "id",
+        "prefix": "/",
+        "delimiter": "/",
+        "optional": false,
+        "repeat": false,
+        "partial": false,
+        "asterisk": false,
+        "pattern": "[^\\/]+?"
+      }
+    ],
+    "path": "/admin/user/:id",
+    "regexp": "/^\\/admin\\/user\\/((?:[^\\/]+?))(?:\\/(?=$))?$/",
+    "stack": [
+      "middleware",
+      "wrappedController"
+    ]
+  },
+  {
+    "name": "s",
+    "methods": [
+      "HEAD",
+      "GET"
+    ],
+    "paramNames": [],
+    "path": "/admin/menu",
+    "regexp": "/^\\/admin\\/menu(?:\\/(?=$))?$/",
+    "stack": [
+      "middleware",
+      "wrappedController"
+    ]
+  },
+  {
+    "name": "s",
+    "methods": [
+      "POST"
+    ],
+    "paramNames": [],
+    "path": "/admin/menu",
+    "regexp": "/^\\/admin\\/menu(?:\\/(?=$))?$/",
+    "stack": [
+      "middleware",
+      "wrappedController"
+    ]
+  },
+  {
+    "name": null,
+    "methods": [
+      "HEAD",
+      "GET"
+    ],
+    "paramNames": [],
+    "path": "/admin/info",
+    "regexp": "/^\\/admin\\/info(?:\\/(?=$))?$/",
+    "stack": [
+      "middleware",
+      "wrappedController"
+    ]
+  },
+  {
+    "name": null,
+    "methods": [
+      "POST"
+    ],
+    "paramNames": [],
+    "path": "/admin/login",
+    "regexp": "/^\\/admin\\/login(?:\\/(?=$))?$/",
     "stack": [
       "wrappedController"
     ]
