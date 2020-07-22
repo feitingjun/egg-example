@@ -7,7 +7,7 @@ module.exports = app => {
   // RESTful风格的路由，用户增删改查
   adminRouter.resources('/user', jwt, controller.admin.user);
 
-  //菜单
+  //菜单，controller可以简写
   adminRouter.resources('/menu', jwt, 'admin.menu')
 
   // 根据token获取用户信息
