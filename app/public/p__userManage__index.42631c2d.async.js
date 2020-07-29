@@ -1,0 +1,1 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([[8],{bakz:function(n,e,t){},pq7E:function(n,e,t){"use strict";t.r(e);var a=t("ZZRV"),s=t.n(a),r=t("bakz"),c=t.n(r);class o extends s.a.Component{constructor(){super(...arguments),this.state={}}render(){return s.a.createElement("div",{className:c.a.container},"\u7528\u6237\u7ba1\u7406")}}e["default"]=o}}]);

@@ -17,7 +17,7 @@ class ControllerClass extends Controller {
     }, app.config.jwt.secret, {
       expiresIn: '7200s', //有效时间
     })
-    const menuList = await ctx.service.user.getChildNode(0);
+    const menuList = await this.getChildNode(0);
     ctx.body = {
       data: {
         token,
@@ -31,7 +31,7 @@ class ControllerClass extends Controller {
   async info() {
     const ctx = this.ctx;
     const user = await ctx.model.User.findByPk(ctx.state.user.id);
-    const menuList = await ctx.service.user.getChildNode(0);
+    const menuList = await this.getChildNode(0);
     ctx.body = {
       data: {
         userInfo: user,
@@ -52,6 +52,15 @@ class ControllerClass extends Controller {
     ctx.body = {
       message: '退出登录成功'
     }
+  }
+
+  async getChildNode(pid){
+    const ctx = this.ctx;
+    const res = await ctx.model.Menu.findAll({ where: { pid } });
+    return await Promise.all(res.map(async v => { 
+      v.dataValues.children = await this.getChildNode(v.id); 
+      return v;
+     }));
   }
 }
 

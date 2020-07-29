@@ -1,1 +1,0 @@
-(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([[5],{PJem:function(e,n,t){"use strict";t.r(n);var s=t("ZZRV"),a=t.n(s),r=t("PSke"),c=t.n(r);class o extends a.a.Component{constructor(){super(...arguments),this.state={}}render(){return a.a.createElement("div",{className:c.a.container},"11111")}}n["default"]=o},PSke:function(e,n,t){}}]);

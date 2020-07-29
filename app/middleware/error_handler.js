@@ -26,6 +26,7 @@ module.exports = () => {
                     break;
                 case "SequelizeUniqueConstraintError":
                     message = "已存在";
+                    // status = 200
                     break;
                 case "SequelizeExclusionConstraintError":
                     message = "排除约束错误";

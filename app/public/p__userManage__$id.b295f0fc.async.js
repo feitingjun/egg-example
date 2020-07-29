@@ -1,1 +1,0 @@
-(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([[6],{A45W:function(n,e,t){},UDmH:function(n,e,t){"use strict";t.r(e);var s=t("ZZRV"),a=t.n(s),r=t("A45W"),c=t.n(r);class o extends a.a.Component{constructor(){super(...arguments),this.state={}}render(){return a.a.createElement("div",{className:c.a.container},"444444444")}}e["default"]=o}}]);

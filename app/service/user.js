@@ -36,15 +36,6 @@ class UserService extends Service {
     if (!user) this.ctx.throw(200, '用户不存在');
     return await user.destroy();
   }
-
-  async getChildNode(sup_id){
-    const ctx = this.ctx;
-    const res = await ctx.model.Menu.findAll({ where: { sup_id } });
-    return await Promise.all(res.map(async v => { 
-      v.dataValues.children = await this.getChildNode(v.id); 
-      return v;
-     }));
-  }
 }
 
 module.exports = UserService;
