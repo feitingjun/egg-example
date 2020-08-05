@@ -1,5 +1,5 @@
 module.exports = app => {
-  const { STRING, INTEGER, DATE } = app.Sequelize;
+  const { STRING, INTEGER, FLOAT } = app.Sequelize;
 
   const Menu = app.model.define('menus', {
     id: { type: INTEGER, primaryKey: true, autoIncrement: true },
@@ -7,10 +7,7 @@ module.exports = app => {
     route: {  
       type: STRING(30), 
       allowNull: false, 
-      unique: {
-        args: true,
-        msg: 'Email address already in use!'
-      }, 
+      unique: true,
       validate: {
         isUnique: (route, next) => {
           Menu.findOne({ where: { route: route } })
@@ -26,6 +23,7 @@ module.exports = app => {
     },
     icon: {  type: STRING(30) },
     pid: { type: INTEGER, defaultValue: 0 },
+    sort: FLOAT(11),
   },{
     createdAt: 'created_at',
     updatedAt: 'updated_at',

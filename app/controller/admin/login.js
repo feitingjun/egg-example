@@ -56,7 +56,10 @@ class ControllerClass extends Controller {
 
   async getChildNode(pid){
     const ctx = this.ctx;
-    const res = await ctx.model.Menu.findAll({ where: { pid } });
+    const res = await ctx.model.Menu.findAll({ 
+      where: { pid },
+      order: [['sort']]
+    });
     return await Promise.all(res.map(async v => { 
       v.dataValues.children = await this.getChildNode(v.id); 
       return v;

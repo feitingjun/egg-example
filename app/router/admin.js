@@ -6,9 +6,15 @@ module.exports = app => {
 
   // RESTful风格的路由，用户增删改查
   adminRouter.resources('/user', jwt, controller.admin.user);
+  adminRouter.del('/user', jwt, 'admin.user.removes')
 
   //菜单，controller可以简写
   adminRouter.resources('/menu', jwt, 'admin.menu')
+  adminRouter.post('/menu/sort', jwt, 'admin.menu.sort')
+
+  // 角色
+  adminRouter.resources('/role', jwt, 'admin.role')
+  adminRouter.del('/role', jwt, 'admin.role.removes')
 
   // 根据token获取用户信息
   adminRouter.get('/info', jwt, 'admin.login.info');

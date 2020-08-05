@@ -21,7 +21,7 @@ class HomeController extends Controller {
   async create() {
     const res = await this.service.user.create();
     this.ctx.body = {
-      data: res,
+      data: null,
       message: '新增成功'
     };
   }
@@ -33,13 +33,25 @@ class HomeController extends Controller {
       message: '修改成功'
     };
   }
-  // 删除用户
+  // 单条删除
   async destroy() {
     const res = await this.service.user.destroy();
     this.ctx.body = {
       data: res,
       message: '删除成功'
     };
+  }
+  // 批量删除
+  async removes(){
+    const ctx = this.ctx;
+    const rows = await ctx.model.User.destroy({ 
+      where: {
+        id: { [ctx.app.Sequelize.Op.in]: ctx.request.body.ids }
+      }
+     });
+    ctx.body = {
+      message: '删除成功'
+    }
   }
 }
 

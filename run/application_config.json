@@ -166,12 +166,13 @@
       "maxDays": 31
     },
     "static": {
-      "prefix": "/public/",
-      "dir": "E:\\study1\\egg-example\\app\\public",
+      "prefix": "/upload",
+      "dir": "E:\\study1\\egg-example\\app\\public\\upload",
       "dynamic": true,
       "preload": false,
-      "buffer": false,
-      "maxFiles": 1000
+      "buffer": true,
+      "maxFiles": 1000,
+      "maxAge": 31536000
     },
     "view": {
       "root": "E:\\study1\\egg-example\\app\\view",

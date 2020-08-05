@@ -75,6 +75,15 @@
     "secret": "E:\\study1\\egg-example\\config\\config.default.js",
     "enable": "E:\\study1\\egg-example\\node_modules\\_egg-jwt@3.1.7@egg-jwt\\config\\config.default.js"
   },
+  "static": {
+    "prefix": "E:\\study1\\egg-example\\config\\config.default.js",
+    "dir": "E:\\study1\\egg-example\\config\\config.default.js",
+    "dynamic": "E:\\study1\\egg-example\\config\\config.default.js",
+    "preload": "E:\\study1\\egg-example\\config\\config.default.js",
+    "maxAge": "E:\\study1\\egg-example\\config\\config.default.js",
+    "buffer": "E:\\study1\\egg-example\\config\\config.default.js",
+    "maxFiles": "E:\\study1\\egg-example\\node_modules\\_egg-static@2.2.0@egg-static\\config\\config.default.js"
+  },
   "session": {
     "maxAge": "E:\\study1\\egg-example\\node_modules\\_egg-session@3.2.0@egg-session\\config\\config.default.js",
     "key": "E:\\study1\\egg-example\\node_modules\\_egg-session@3.2.0@egg-session\\config\\config.default.js",
@@ -149,14 +158,6 @@
     "maxFiles": "E:\\study1\\egg-example\\node_modules\\_egg-logrotator@3.1.0@egg-logrotator\\config\\config.default.js",
     "rotateDuration": "E:\\study1\\egg-example\\node_modules\\_egg-logrotator@3.1.0@egg-logrotator\\config\\config.default.js",
     "maxDays": "E:\\study1\\egg-example\\node_modules\\_egg-logrotator@3.1.0@egg-logrotator\\config\\config.default.js"
-  },
-  "static": {
-    "prefix": "E:\\study1\\egg-example\\node_modules\\_egg-static@2.2.0@egg-static\\config\\config.default.js",
-    "dir": "E:\\study1\\egg-example\\node_modules\\_egg-static@2.2.0@egg-static\\config\\config.default.js",
-    "dynamic": "E:\\study1\\egg-example\\node_modules\\_egg-static@2.2.0@egg-static\\config\\config.default.js",
-    "preload": "E:\\study1\\egg-example\\node_modules\\_egg-static@2.2.0@egg-static\\config\\config.default.js",
-    "buffer": "E:\\study1\\egg-example\\node_modules\\_egg-static@2.2.0@egg-static\\config\\config.default.js",
-    "maxFiles": "E:\\study1\\egg-example\\node_modules\\_egg-static@2.2.0@egg-static\\config\\config.default.js"
   },
   "view": {
     "root": "E:\\study1\\egg-example\\node_modules\\_egg-view@2.1.2@egg-view\\config\\config.default.js",

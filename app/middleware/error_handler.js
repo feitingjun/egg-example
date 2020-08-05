@@ -15,45 +15,45 @@ module.exports = () => {
             let message = null, status = err.status || 500;
             switch(err.name){
                 case "SequelizeValidationError":
-                    message = "验证失败";
+                    message = "验证失败" + err.message;
                     if(err.errors) message =  `${err.errors.map(v=>v.message).join(",")}`;
                     break;
                 case "SequelizeDatabaseError":
-                    message = "数据库错误";
+                    message = "操作数据库错误" + err.message;
                     break;
                 case "SequelizeTimeoutError":
-                    message = "查询超时";
+                    message = "查询超时" + err.message;
                     break;
                 case "SequelizeUniqueConstraintError":
-                    message = "已存在";
+                    message = "已存在" + err.message;
                     // status = 200
                     break;
                 case "SequelizeExclusionConstraintError":
-                    message = "排除约束错误";
+                    message = "排除约束错误" + err.message;
                     break;
                 case "SequelizeForeignKeyConstraintError":
-                    message = "外键约束错误";
+                    message = "外键约束错误" + err.message;
                     break;
                 case "SequelizeConnectionError":
-                    message = "连接数据库错误";
+                    message = "连接数据库错误" + err.message;
                     break;
                 case "SequelizeConnectionRefusedError":
-                    message = "连接数据库被拒绝";
+                    message = "连接数据库被拒绝" + err.message;
                     break;
                 case "SequelizeAccessDeniedError":
-                    message = "没有权限访问数据库";
+                    message = "没有权限访问数据库" + err.message;
                     break;
                 case "SequelizeHostNotFoundError":
-                    message = "未找到主机";
+                    message = "未找到主机" + err.message;
                     break;
                 case "SequelizeInvalidConnectionError":
-                    message = "无效链接";
+                    message = "无效链接" + err.message;
                     break;
                 case "SequelizeConnectionTimedOutError":
-                    message = "链接数据库超时";
+                    message = "链接数据库超时" + err.message;
                     break;
                 case "SequelizeInstanceError":
-                    message = "实例错误";
+                    message = "实例错误" + err.message;
                     break;
                 default:
                     if(err.status === 404) {
