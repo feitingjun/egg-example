@@ -2,6 +2,8 @@ const path = require('path');
 
 module.exports = appInfo => {
   return {
+    appid: 'wxfa99ff66e9609acb',
+    secret: 'a8fc6a77ad138589cefba2cfe4b752d7',
     keys: '6543345653123465_9023499',
     sequelize: {
       dialect: 'mysql',
@@ -11,18 +13,22 @@ module.exports = appInfo => {
       username: 'root', // 用户名
       password: '4888982138fei', // 口令
       timezone: '+08:00' ,// 保存为本地时区
+      define: {
+        underscored: true //数据库是否使用下划线
+      },
       dialectOptions: {
         dateStrings: true,
-        typeCast(field, next) {
-          // 返回数据时格式化时间
-          if (field.type === 'DATETIME') {
-            return field.string();
-          }
-          return next();
-        }
+        // typeCast(field, next) {
+        //   // 返回数据时格式化时间
+        //   if (field.type === 'DATETIME') {
+        //     return field.string();
+        //   }
+        //   return next();
+        // }
+        typeCast: true
       }
     },
-    middleware: ['errorHandler', 'isLogin', 'notfoundHandler'],
+    middleware: ['errorHandler', 'isLogin', 'notfoundHandler', 'accessToken'],
     // 只对 /api 前缀的 url 路径生效
     errorHandler: {
       match: '/',
@@ -43,6 +49,13 @@ module.exports = appInfo => {
       preload: false,
       maxAge: 31536000, // in prod env, 0 in other envs
       buffer: true, // in prod env, false in other envs
+    },
+    httpclient: {
+      request: {
+        // 默认 request 超时时间
+        timeout: 180000,
+        dataType: 'json'
+      },
     }
   }
 };

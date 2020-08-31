@@ -14,7 +14,8 @@ class RoleController extends Controller {
       v.dataValues.auth = v.auth ? await Promise.all(v.auth.split(',').map(async id => {
         const data = await ctx.model.Menu.findByPk(id);
         return  data
-      })) : null
+      })) : null;
+      v.dataValues.auth = v.dataValues.auth.filter(v => !!v);
       return v;
     }))
     ctx.body = {

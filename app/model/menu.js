@@ -6,7 +6,7 @@ module.exports = app => {
     name: {  type: STRING(30), allowNull: false },
     route: {  
       type: STRING(30), 
-      allowNull: false, 
+      // allowNull: false, 
       unique: true,
       validate: {
         isUnique: (route, next) => {

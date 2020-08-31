@@ -1,4 +1,6 @@
 {
+  "appid": "E:\\study1\\egg-example\\config\\config.default.js",
+  "secret": "E:\\study1\\egg-example\\config\\config.default.js",
   "keys": "E:\\study1\\egg-example\\config\\config.default.js",
   "sequelize": {
     "dialect": "E:\\study1\\egg-example\\config\\config.default.js",
@@ -8,6 +10,9 @@
     "username": "E:\\study1\\egg-example\\config\\config.default.js",
     "password": "E:\\study1\\egg-example\\config\\config.default.js",
     "timezone": "E:\\study1\\egg-example\\config\\config.default.js",
+    "define": {
+      "underscored": "E:\\study1\\egg-example\\config\\config.default.js"
+    },
     "dialectOptions": {
       "dateStrings": "E:\\study1\\egg-example\\config\\config.default.js",
       "typeCast": "E:\\study1\\egg-example\\config\\config.default.js"
@@ -74,6 +79,36 @@
   "jwt": {
     "secret": "E:\\study1\\egg-example\\config\\config.default.js",
     "enable": "E:\\study1\\egg-example\\node_modules\\_egg-jwt@3.1.7@egg-jwt\\config\\config.default.js"
+  },
+  "static": {
+    "prefix": "E:\\study1\\egg-example\\config\\config.default.js",
+    "dir": "E:\\study1\\egg-example\\config\\config.default.js",
+    "dynamic": "E:\\study1\\egg-example\\config\\config.default.js",
+    "preload": "E:\\study1\\egg-example\\config\\config.default.js",
+    "maxAge": "E:\\study1\\egg-example\\config\\config.default.js",
+    "buffer": "E:\\study1\\egg-example\\config\\config.default.js",
+    "maxFiles": "E:\\study1\\egg-example\\node_modules\\_egg-static@2.2.0@egg-static\\config\\config.default.js"
+  },
+  "httpclient": {
+    "request": {
+      "timeout": "E:\\study1\\egg-example\\config\\config.default.js",
+      "dataType": "E:\\study1\\egg-example\\config\\config.default.js"
+    },
+    "enableDNSCache": "E:\\study1\\egg-example\\node_modules\\_egg@2.27.0@egg\\config\\config.default.js",
+    "dnsCacheLookupInterval": "E:\\study1\\egg-example\\node_modules\\_egg@2.27.0@egg\\config\\config.default.js",
+    "dnsCacheMaxLength": "E:\\study1\\egg-example\\node_modules\\_egg@2.27.0@egg\\config\\config.default.js",
+    "httpAgent": {
+      "keepAlive": "E:\\study1\\egg-example\\node_modules\\_egg@2.27.0@egg\\config\\config.default.js",
+      "freeSocketTimeout": "E:\\study1\\egg-example\\node_modules\\_egg@2.27.0@egg\\config\\config.default.js",
+      "maxSockets": "E:\\study1\\egg-example\\node_modules\\_egg@2.27.0@egg\\config\\config.default.js",
+      "maxFreeSockets": "E:\\study1\\egg-example\\node_modules\\_egg@2.27.0@egg\\config\\config.default.js"
+    },
+    "httpsAgent": {
+      "keepAlive": "E:\\study1\\egg-example\\node_modules\\_egg@2.27.0@egg\\config\\config.default.js",
+      "freeSocketTimeout": "E:\\study1\\egg-example\\node_modules\\_egg@2.27.0@egg\\config\\config.default.js",
+      "maxSockets": "E:\\study1\\egg-example\\node_modules\\_egg@2.27.0@egg\\config\\config.default.js",
+      "maxFreeSockets": "E:\\study1\\egg-example\\node_modules\\_egg@2.27.0@egg\\config\\config.default.js"
+    }
   },
   "session": {
     "maxAge": "E:\\study1\\egg-example\\node_modules\\_egg-session@3.2.0@egg-session\\config\\config.default.js",
@@ -149,14 +184,6 @@
     "maxFiles": "E:\\study1\\egg-example\\node_modules\\_egg-logrotator@3.1.0@egg-logrotator\\config\\config.default.js",
     "rotateDuration": "E:\\study1\\egg-example\\node_modules\\_egg-logrotator@3.1.0@egg-logrotator\\config\\config.default.js",
     "maxDays": "E:\\study1\\egg-example\\node_modules\\_egg-logrotator@3.1.0@egg-logrotator\\config\\config.default.js"
-  },
-  "static": {
-    "prefix": "E:\\study1\\egg-example\\node_modules\\_egg-static@2.2.0@egg-static\\config\\config.default.js",
-    "dir": "E:\\study1\\egg-example\\node_modules\\_egg-static@2.2.0@egg-static\\config\\config.default.js",
-    "dynamic": "E:\\study1\\egg-example\\node_modules\\_egg-static@2.2.0@egg-static\\config\\config.default.js",
-    "preload": "E:\\study1\\egg-example\\node_modules\\_egg-static@2.2.0@egg-static\\config\\config.default.js",
-    "buffer": "E:\\study1\\egg-example\\node_modules\\_egg-static@2.2.0@egg-static\\config\\config.default.js",
-    "maxFiles": "E:\\study1\\egg-example\\node_modules\\_egg-static@2.2.0@egg-static\\config\\config.default.js"
   },
   "view": {
     "root": "E:\\study1\\egg-example\\node_modules\\_egg-view@2.1.2@egg-view\\config\\config.default.js",
@@ -256,26 +283,6 @@
       "consoleLevel": "E:\\study1\\egg-example\\node_modules\\_egg@2.27.0@egg\\config\\config.local.js"
     },
     "allowDebugAtProd": "E:\\study1\\egg-example\\node_modules\\_egg@2.27.0@egg\\config\\config.default.js"
-  },
-  "httpclient": {
-    "enableDNSCache": "E:\\study1\\egg-example\\node_modules\\_egg@2.27.0@egg\\config\\config.default.js",
-    "dnsCacheLookupInterval": "E:\\study1\\egg-example\\node_modules\\_egg@2.27.0@egg\\config\\config.default.js",
-    "dnsCacheMaxLength": "E:\\study1\\egg-example\\node_modules\\_egg@2.27.0@egg\\config\\config.default.js",
-    "request": {
-      "timeout": "E:\\study1\\egg-example\\node_modules\\_egg@2.27.0@egg\\config\\config.default.js"
-    },
-    "httpAgent": {
-      "keepAlive": "E:\\study1\\egg-example\\node_modules\\_egg@2.27.0@egg\\config\\config.default.js",
-      "freeSocketTimeout": "E:\\study1\\egg-example\\node_modules\\_egg@2.27.0@egg\\config\\config.default.js",
-      "maxSockets": "E:\\study1\\egg-example\\node_modules\\_egg@2.27.0@egg\\config\\config.default.js",
-      "maxFreeSockets": "E:\\study1\\egg-example\\node_modules\\_egg@2.27.0@egg\\config\\config.default.js"
-    },
-    "httpsAgent": {
-      "keepAlive": "E:\\study1\\egg-example\\node_modules\\_egg@2.27.0@egg\\config\\config.default.js",
-      "freeSocketTimeout": "E:\\study1\\egg-example\\node_modules\\_egg@2.27.0@egg\\config\\config.default.js",
-      "maxSockets": "E:\\study1\\egg-example\\node_modules\\_egg@2.27.0@egg\\config\\config.default.js",
-      "maxFreeSockets": "E:\\study1\\egg-example\\node_modules\\_egg@2.27.0@egg\\config\\config.default.js"
-    }
   },
   "meta": {
     "enable": "E:\\study1\\egg-example\\node_modules\\_egg@2.27.0@egg\\config\\config.default.js",

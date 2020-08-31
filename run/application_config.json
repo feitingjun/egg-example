@@ -189,9 +189,12 @@
       "username": "root",
       "password": "<String len: 13>",
       "timezone": "+08:00",
+      "define": {
+        "underscored": true
+      },
       "dialectOptions": {
         "dateStrings": true,
-        "typeCast": "<Function typeCast>"
+        "typeCast": true
       }
     },
     "jwt": {
@@ -297,7 +300,8 @@
       "dnsCacheLookupInterval": 10000,
       "dnsCacheMaxLength": 1000,
       "request": {
-        "timeout": 5000
+        "timeout": 180000,
+        "dataType": "json"
       },
       "httpAgent": {
         "keepAlive": true,
@@ -344,11 +348,14 @@
       "responseTimeout": 60000
     },
     "onClientError": null,
+    "appid": "wxfa99ff66e9609acb",
+    "secret": "<String len: 32>",
     "middleware": [
       "jwt",
       "errorHandler",
       "isLogin",
-      "notfoundHandler"
+      "notfoundHandler",
+      "accessToken"
     ],
     "errorHandler": {
       "match": "/"

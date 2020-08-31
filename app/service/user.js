@@ -19,7 +19,12 @@ class UserService extends Service {
   // 单条查询
   async show() {
     const ctx = this.ctx;
-    const user = await ctx.model.User.findByPk(ctx.params.id);
+    const user = await ctx.model.User.findByPk(ctx.params.id, {
+      // include: [{
+      //   model: ctx.app.model.Role
+      // }]
+      attributes: { exclude: ['password'] }
+    });
     if (!user) this.ctx.throw(200, '用户不存在');
     return user;
   }
