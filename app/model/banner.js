@@ -1,5 +1,5 @@
 module.exports = app => {
-  const { STRING, UUID, INTEGER, UUIDV4 } = app.Sequelize;
+  const { STRING, UUID, INTEGER, UUIDV4, VIRTUAL } = app.Sequelize;
 
   const Banner = app.model.define('banners', {
     id: {
@@ -8,12 +8,21 @@ module.exports = app => {
       primaryKey: true, //是否为主键
     },
     name: STRING,
-    good_id: UUID,
+    goods_id: UUID,
     url: STRING,
+    full_url: { //使用虚拟字段返回带完整域名的图片地址
+      type: VIRTUAL,
+      get() {
+        return app.config.domainName + this.url
+      },
+    },
     sort: INTEGER
   }, {
     createdAt: 'created_at',
     updatedAt: 'updated_at',
   });
+  Banner.associate = () => {
+    app.model.Banner.belongsTo(app.model.Goods, { foreignKey: 'goods_id', as: 'goods' });
+  }
   return Banner;
 };

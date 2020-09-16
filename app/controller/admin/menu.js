@@ -1,6 +1,6 @@
 const Controller = require('egg').Controller;
 
-class MenuController extends Controller {
+class ControllerClass extends Controller {
 
   // 树级查询
   async index() {
@@ -113,4 +113,4 @@ class MenuController extends Controller {
   }
 }
 
-module.exports = MenuController;
+module.exports = ControllerClass;

@@ -1,19 +1,15 @@
 const Controller = require('egg').Controller;
 
-class HomeController extends Controller {
+class ControllerClass extends Controller {
   // 列表查询
   async index() {
     const ctx = this.ctx;
-    const res = await this.ctx.model.WeappUser.findAll({ 
-      where: { 
-        nickName: { 
-          [ctx.app.Sequelize.Op.like]: `%${ctx.query.keyword || ''}%`,
-          [ctx.app.Sequelize.Op.not]: null,   
-         },
-      } 
-    });
+    const rows = await ctx.helper.queryPager({ 
+      ...ctx.query,  
+      where: { nickName: { [ctx.app.Sequelize.Op.like]: `%${ctx.query.keyword || ''}%` } }
+    }, 'WeappUser');
     this.ctx.body = {
-      data: res,
+      data: rows,
       message: '查询成功'
     }
   }
@@ -42,4 +38,4 @@ class HomeController extends Controller {
   }
 }
 
-module.exports = HomeController;
+module.exports = ControllerClass;

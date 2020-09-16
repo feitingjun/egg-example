@@ -1,5 +1,5 @@
 module.exports = app => {
-  const { STRING, UUID, UUIDV4 } = app.Sequelize;
+  const { STRING, UUID, UUIDV4, VIRTUAL } = app.Sequelize;
 
   const HomeNav = app.model.define('home_navs', {
     id: {
@@ -8,8 +8,15 @@ module.exports = app => {
       primaryKey: true, //是否为主键
     },
     name: STRING,
+    page_name: STRING,
     page: STRING,
     icon: STRING,
+    full_icon: {
+      type: VIRTUAL,
+      get() {
+        return app.config.domainName + this.icon
+      },
+    },
     sort: STRING,
     param: STRING
   }, {

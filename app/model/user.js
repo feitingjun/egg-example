@@ -1,7 +1,7 @@
 const moment = require('moment');
 
 module.exports = app => {
-  const { STRING, INTEGER, DATE, UUID, UUIDV4 } = app.Sequelize;
+  const { STRING, INTEGER, DATE, UUID, UUIDV4, VIRTUAL } = app.Sequelize;
 
   const User = app.model.define('users', {
     id: {
@@ -68,6 +68,12 @@ module.exports = app => {
     },
     role_id: UUID,
     headpic: STRING(255),
+    headpicUrl: { //使用虚拟字段返回带完整域名的图片地址
+      type: VIRTUAL,
+      get() {
+        return app.config.domainName + this.headpic
+      },
+    },
     create_by: UUID,
     update_by: UUID
   }, {

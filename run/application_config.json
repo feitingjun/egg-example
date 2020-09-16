@@ -350,6 +350,7 @@
     "onClientError": null,
     "appid": "wxfa99ff66e9609acb",
     "secret": "<String len: 32>",
+    "domainName": "http://192.168.1.9:7001",
     "middleware": [
       "jwt",
       "errorHandler",

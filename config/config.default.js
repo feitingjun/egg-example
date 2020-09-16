@@ -5,6 +5,7 @@ module.exports = appInfo => {
     appid: 'wxfa99ff66e9609acb',
     secret: 'a8fc6a77ad138589cefba2cfe4b752d7',
     keys: '6543345653123465_9023499',
+    domainName: 'http://192.168.1.9:7001',
     sequelize: {
       dialect: 'mysql',
       host: '127.0.0.1',

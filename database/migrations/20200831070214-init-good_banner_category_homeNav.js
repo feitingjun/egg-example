@@ -1,18 +1,23 @@
 module.exports = {
   // 在执行数据库升级时调用的函数，创建 users 表
   up: async (queryInterface, Sequelize) => {
-    const { INTEGER, DOUBLE, STRING, UUID, UUIDV4 } = Sequelize;
+    const { INTEGER, DOUBLE, STRING, UUID, UUIDV4, DATE, FLOAT } = Sequelize;
     await queryInterface.createTable('categorys', {
       id: { type: UUID, primaryKey: true, defaultValue: UUIDV4 },
       name: STRING,
-      sort: STRING
+      sort: FLOAT(11),
+      remark: STRING,
+      created_at: DATE,
+      updated_at: DATE,
     });
     await queryInterface.createTable('banners', {
       id: { type: UUID, primaryKey: true, defaultValue: UUIDV4 },
       name: STRING,
       good_id: UUID,
       url: STRING,
-      sort: INTEGER
+      sort: INTEGER,
+      created_at: DATE,
+      updated_at: DATE,
     });
     await queryInterface.createTable('goods', {
       id: { type: UUID, primaryKey: true, defaultValue: UUIDV4 },
@@ -25,7 +30,9 @@ module.exports = {
       status: INTEGER,
       property: STRING(1234),
       thumb: STRING,
-      recommend: INTEGER
+      recommend: INTEGER,
+      created_at: DATE,
+      updated_at: DATE,
     });
     await queryInterface.createTable('home_navs', {
       id: { type: UUID, primaryKey: true, defaultValue: UUIDV4 },
@@ -33,7 +40,9 @@ module.exports = {
       page: STRING,
       icon: STRING,
       sort: STRING,
-      param: STRING
+      param: STRING,
+      created_at: DATE,
+      updated_at: DATE,
     });
   },
   // 在执行数据库降级时调用的函数，删除 users 表

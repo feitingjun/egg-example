@@ -24,7 +24,7 @@ class ControllerClass extends Controller {
     })
     ctx.body = {
       data: {
-        userInf: row,
+        userInfo: row,
         token
       }
     }

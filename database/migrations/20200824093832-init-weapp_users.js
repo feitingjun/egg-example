@@ -11,6 +11,7 @@ module.exports = {
         country: STRING,
         province: STRING,
         city: STRING,
+        login_at: DATE,
         created_at: DATE,
         updated_at: DATE,
       });

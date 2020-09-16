@@ -1,6 +1,6 @@
 const Controller = require('egg').Controller;
 
-class HomeController extends Controller {
+class ControllerClass extends Controller {
   // 列表查询
   async index() {
     const res = await this.service.user.index();
@@ -55,4 +55,4 @@ class HomeController extends Controller {
   }
 }
 
-module.exports = HomeController;
+module.exports = ControllerClass;

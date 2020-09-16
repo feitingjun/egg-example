@@ -2,7 +2,7 @@ const menu = require('../../model/menu');
 
 const Controller = require('egg').Controller;
 
-class RoleController extends Controller {
+class ControllerClass extends Controller {
   // 列表查询
   async index() {
     const ctx = this.ctx;
@@ -70,4 +70,4 @@ class RoleController extends Controller {
   }
 }
 
-module.exports = RoleController;
+module.exports = ControllerClass;
