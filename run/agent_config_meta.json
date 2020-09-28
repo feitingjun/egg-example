@@ -2,7 +2,6 @@
   "appid": "E:\\study1\\egg-example\\config\\config.default.js",
   "secret": "E:\\study1\\egg-example\\config\\config.default.js",
   "keys": "E:\\study1\\egg-example\\config\\config.default.js",
-  "domainName": "E:\\study1\\egg-example\\config\\config.default.js",
   "sequelize": {
     "dialect": "E:\\study1\\egg-example\\config\\config.default.js",
     "host": "E:\\study1\\egg-example\\config\\config.default.js",

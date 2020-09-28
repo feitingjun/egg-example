@@ -22,7 +22,7 @@ class ControllerClass extends Controller {
     }, app.config.jwt.secret, {
       expiresIn: '7200s', //有效时间
     })
-    let auth = user.role.auth.split(',');
+    let auth = user.role.auth&&user.role.auth.split(',') || [];
     if(user.username == 'admin'){
       auth = await ctx.model.Menu.findAll({ attributes: ['id'], raw: true }).map(v => v.id)
     }
@@ -44,7 +44,7 @@ class ControllerClass extends Controller {
         model: ctx.app.model.Role
       }]
     });
-    let auth = user.role.auth.split(',');
+    let auth = user.role.auth&&user.role.auth.split(',') || [];
     if(user.username == 'admin'){
       auth = await ctx.model.Menu.findAll({ attributes: ['id'], raw: true }).map(v => v.id)
     }

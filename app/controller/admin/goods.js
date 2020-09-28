@@ -16,10 +16,12 @@ class ControllerClass extends Controller {
     const rows = await ctx.helper.queryPager({ 
       ...ctx.query,  
       where: where,
+      order: [['created_at', 'DESC']],
       include: [{
         model: ctx.app.model.Category
       }]
     }, 'Goods');
+
     ctx.body = {
       data: rows,
       message: '查询成功'
@@ -50,17 +52,17 @@ class ControllerClass extends Controller {
     const row = await ctx.model.Goods.findByPk(ctx.params.id);
     if (!row) ctx.throw(200, '商品不存在');
     const result = await ctx.helper.getFormData();
-    const oldBanner = row.dataValues.banner&&row.dataValues.banner.split(',');
-    const neWBanner = result.banner.split(',');
+    const oldBanner = row.dataValues.banner&&row.dataValues.banner.split(',') || [];
+    const neWBanner = result.banner&&result.banner.split(',') || [];
     // 删除旧的缩略图
-    if(row.thumb != result.thumb){
+    if(result.thumb && row.thumb != result.thumb){
       const path = 'app/public' + row.thumb;
       if(fs.existsSync(path)){ // 判断文件是否存在
         fs.unlinkSync(path); // 删除文件
       }
     }
     // 删除不存在的banner图
-    oldBanner&&oldBanner.map(v => {
+    neWBanner.length>0 && oldBanner&&oldBanner.map(v => {
       if(neWBanner.indexOf(v) == -1){
         const path = 'app/public' + v;
         if(fs.existsSync(path)){ // 判断文件是否存在
@@ -80,7 +82,7 @@ class ControllerClass extends Controller {
     const row = await ctx.model.Goods.findByPk(ctx.params.id);
     if(!row) this.ctx.throw(200, '商品不存在');
     if(row.thumb){
-      const path = 'app/public' + user.thumb;
+      const path = 'app/public' + row.thumb;
       if(fs.existsSync(path)){ // 判断文件是否存在
         fs.unlinkSync(path); // 删除文件
       }

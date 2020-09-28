@@ -11,12 +11,6 @@ module.exports = app => {
     page_name: STRING,
     page: STRING,
     icon: STRING,
-    full_icon: {
-      type: VIRTUAL,
-      get() {
-        return app.config.domainName + this.icon
-      },
-    },
     sort: STRING,
     param: STRING
   }, {

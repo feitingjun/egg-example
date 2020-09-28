@@ -13,6 +13,7 @@ class ControllerClass extends Controller {
       }],
       order: [['sort']]
     })
+    rows.map(v => v.setDataValue('full_url', ctx.domainName + v.url))
     ctx.body = {
       data: rows,
       message: '查询成功'
@@ -38,7 +39,7 @@ class ControllerClass extends Controller {
     const result = await ctx.helper.getFormData();
     if (!row) ctx.throw(200, '数据不存在');
     // 删除旧的缩略图
-    if(row.url != result.url){
+    if(result.url && row.url != result.url){
       const path = 'app/public' + row.url;
       if(fs.existsSync(path)){ // 判断文件是否存在
         fs.unlinkSync(path); // 删除文件

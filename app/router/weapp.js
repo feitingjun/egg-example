@@ -16,4 +16,9 @@ module.exports = app => {
   weappRouter.get('/recommend', 'weapp.goods.recommend')
   // 分类
   weappRouter.get('/category', 'weapp.goods.category')
+  // 商品详情
+  weappRouter.get('/goods/:id', jwt, 'weapp.goods.show')
+  // 收藏商品
+  weappRouter.post('/collect/goods', jwt, 'weapp.collect.collectGoods')
+  weappRouter.post('/collect/cancel', jwt, 'weapp.collect.destroy')
 }

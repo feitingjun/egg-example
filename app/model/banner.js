@@ -10,12 +10,12 @@ module.exports = app => {
     name: STRING,
     goods_id: UUID,
     url: STRING,
-    full_url: { //使用虚拟字段返回带完整域名的图片地址
-      type: VIRTUAL,
-      get() {
-        return app.config.domainName + this.url
-      },
-    },
+    // full_url: { //使用虚拟字段返回带完整域名的图片地址
+    //   type: VIRTUAL,
+    //   get() {
+    //     return app.config.domainName + this.url
+    //   },
+    // },
     sort: INTEGER
   }, {
     createdAt: 'created_at',

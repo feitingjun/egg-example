@@ -24,19 +24,7 @@ module.exports = app => {
     },
     property: STRING(1234),
     thumb: STRING,
-    fuii_thumb: {
-      type: VIRTUAL,
-      get() {
-        return app.config.domainName + this.thumb
-      },
-    },
     banner: STRING,
-    full_banner: {
-      type: VIRTUAL,
-      get() {
-        return this.banner&&this.banner.split(',').map(v => app.config.domainName + v)
-      },
-    },
     recommend: INTEGER
   }, {
     createdAt: 'created_at',
@@ -44,6 +32,7 @@ module.exports = app => {
   });
   Goods.associate = () => {
     app.model.Goods.belongsTo(app.model.Category, { foreignKey: 'category_id', targetKey: 'id' });
+    app.model.Goods.hasMany(app.model.Collect, { foreignKey: 'record_id', targetKey: 'id', onDelete: 'SET NULL' });
   }
   return Goods;
 };
