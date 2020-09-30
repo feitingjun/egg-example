@@ -32,7 +32,8 @@ module.exports = app => {
   });
   Goods.associate = () => {
     app.model.Goods.belongsTo(app.model.Category, { foreignKey: 'category_id', targetKey: 'id' });
-    app.model.Goods.hasMany(app.model.Collect, { foreignKey: 'record_id', targetKey: 'id', onDelete: 'SET NULL' });
+    app.model.Goods.hasMany(app.model.Collect, { foreignKey: 'record_id', targetKey: 'id' });
+    app.model.Goods.hasMany(app.model.Comment, { foreignKey: 'goods_id', targetKey: 'id' });
   }
   return Goods;
 };

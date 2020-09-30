@@ -21,7 +21,6 @@ class ControllerClass extends Controller {
         model: ctx.app.model.Category
       }]
     }, 'Goods');
-
     ctx.body = {
       data: rows,
       message: '查询成功'
@@ -31,6 +30,9 @@ class ControllerClass extends Controller {
   async show() {
     const ctx = this.ctx;
     const res = await ctx.model.Goods.findByPk(ctx.params.id);
+    if(!res){
+      ctx.throw(200, '商品不存在');
+    }
     this.ctx.body = {
       data: res,
       message: '查询成功'

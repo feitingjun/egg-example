@@ -15,7 +15,6 @@ module.exports = {
     const pageIndex = ctx.query.pageIndex && ctx.query.pageIndex > 0 ? toInt(ctx.query.pageIndex) : 1;
     const offset = (pageIndex - 1) * pageSize;
     if (isPage) query = { limit: pageSize, offset, ...query };
-    console.log(query)
     const { rows: data, count: total } = await ctx.model[model].findAndCountAll(query);
     const page = isPage ? {
       pageIndex, pageSize
