@@ -17,6 +17,7 @@ module.exports = app => {
   Category.associate = () => {
     // 一对多
     app.model.Category.hasMany(app.model.Goods, { foreignKey: 'category_id', targetKey: 'id'});
+    app.model.Category.hasMany(app.model.AttrKey, { foreignKey: 'category_id', targetKey: 'id'});
   }
   return Category;
 };

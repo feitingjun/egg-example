@@ -13,6 +13,7 @@ class ControllerClass extends Controller {
       }]
     }
     if(ctx.query.category_id) where.category_id = ctx.query.category_id;
+    if(ctx.query.status || ctx.query.status == 0) where.status = ctx.query.status;
     const rows = await ctx.helper.queryPager({ 
       ...ctx.query,  
       where: where,

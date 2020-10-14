@@ -1,12 +1,16 @@
 const Controller = require('egg').Controller;
 const fs = require('fs');
-const collect = require('../../model/collect');
 
 class ControllerClass extends Controller {
   // 首页推荐商品查询
   async recommend() {
     const ctx = this.ctx;
-    const res = await ctx.model.Goods.findAll({ where: { recommend: 1 } });
+    const res = await ctx.model.Goods.findAll({ 
+      where: { 
+        recommend: 1,
+        status: 1
+      }
+    });
     res.map(v => v.setDataValue('full_thumb', ctx.domainName + v.thumb));
     this.ctx.body = {
       data: res,
@@ -25,21 +29,21 @@ class ControllerClass extends Controller {
         },
         required: false, //不写这个的话，Collect表中如果不存在满足where的数据，则连主表的数据都不会返回
         attributes: []
-      },{
-        model: ctx.app.model.Comment, 
-        where: {
-          pid: 0
-        },
-        include: [{
-          model: ctx.app.model.WeappUser,
-          as: 'from_user'
-        // },{
-        //   model: ctx.app.model.WeappUser,
-        //   as: 'to_user'
-        }],
-        limit: 3,
-        offset: 0,
-        required: false,
+      // },{
+      //   model: ctx.app.model.Comment, 
+      //   where: {
+      //     pid: 0
+      //   },
+      //   include: [{
+      //     model: ctx.app.model.WeappUser,
+      //     as: 'from_user'
+      //   // },{
+      //   //   model: ctx.app.model.WeappUser,
+      //   //   as: 'to_user'
+      //   }],
+      //   limit: 3,
+      //   offset: 0,
+      //   required: false,
       }],
       attributes: {
         include: [
@@ -47,7 +51,6 @@ class ControllerClass extends Controller {
         ]
       }
     });
-    debugger
     if(!res){
       ctx.throw(200, '商品不存在');
     }
@@ -74,7 +77,11 @@ class ControllerClass extends Controller {
     const ctx = this.ctx;
     const res = await ctx.model.Category.findAll({
       include: [{
-        model: ctx.app.model.Goods
+        model: ctx.app.model.Goods,
+        where: {
+          status: 1
+        },
+        required: false
       }]
     })
     res.map(v => v.goods.map(vv => vv.setDataValue('full_thumb', ctx.domainName + vv.thumb)))

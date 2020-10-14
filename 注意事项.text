@@ -1,0 +1,10 @@
+include (关联查询)的数据如果需要排序 order写在include写在最外层查询，然后指定
+model 如:  order: [[ctx.model.AttrKey, 'sort', 'DESC']]即可实现include关联的AttrKey的数据排序，如果多级就指定多个model
+
+include内如果有where则需将required设为false
+  include: [{
+    model: ctx.app.model.AttrKey,
+    where: { attr_key_name: { [ctx.app.Sequelize.Op.like]: `%${ctx.query.keyword || ''}%` } },
+    required: false
+  }],
+否则，关联表中如果不存在满足where的数据，则连主表的数据都不会返回

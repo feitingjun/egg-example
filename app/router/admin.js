@@ -35,6 +35,16 @@ module.exports = app => {
   adminRouter.del('/category', jwt, 'admin.category.removes')
   adminRouter.post('/category/sort', jwt, 'admin.category.sort')
 
+  // 商品分类属性
+  adminRouter.resources('/attr_key', jwt, 'admin.attrKey')
+  adminRouter.del('/attr_key', jwt, 'admin.attrKey.removes')
+  adminRouter.post('/attr_key/sort', jwt, 'admin.attrKey.sort')
+
+  // 商品分类属性值
+  adminRouter.resources('/attr_value', jwt, 'admin.attrValue')
+  adminRouter.del('/attr_value', jwt, 'admin.attrValue.removes')
+  adminRouter.post('/attr_value/sort', jwt, 'admin.attrValue.sort')
+
   // 商品
   adminRouter.resources('/goods', jwt, 'admin.goods')
   adminRouter.del('/goods', jwt, 'admin.goods.removes')

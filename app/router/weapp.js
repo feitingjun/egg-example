@@ -21,4 +21,6 @@ module.exports = app => {
   // 收藏商品
   weappRouter.post('/collect/goods', jwt, 'weapp.collect.collectGoods')
   weappRouter.post('/collect/cancel', jwt, 'weapp.collect.destroy')
+  // 评论
+  weappRouter.get('/comment/:goodsId', jwt, 'weapp.comment.index')
 }
