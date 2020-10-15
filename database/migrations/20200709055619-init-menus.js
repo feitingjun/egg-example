@@ -5,7 +5,7 @@ module.exports = {
     await queryInterface.createTable('menus', {
       id: { type: INTEGER, primaryKey: true, autoIncrement: true },
       name: { type: STRING(30), allowNull: false },
-      route: { type: STRING(30), allowNull: false, unique: true },
+      route: { type: STRING(30), unique: true },
       sup_id: { type: INTEGER, defaultValue: 0 },
       created_at: DATE,
       updated_at: DATE,
