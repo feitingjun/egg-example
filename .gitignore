@@ -103,5 +103,5 @@ dist
 # TernJS port file
 .tern-port
 
-/run
-/app/public/accessToken.json
+run
+app/public/accessToken.json
