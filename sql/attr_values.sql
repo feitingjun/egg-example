@@ -1,0 +1,2 @@
+INSERT INTO `attr_values`(`id`, `attr_key_id`, `goods_id`, `attr_value_name`, `remark`, `sort`, `created_at`, `updated_at`) VALUES ('7fc72015-e71c-4cfa-962e-2e8ea68d7957', '1f93e085-5bb2-48c1-af77-523eda83ab13', NULL, '绿色', NULL, 2, '2020-10-15 09:20:26', '2020-10-15 09:20:26');
+INSERT INTO `attr_values`(`id`, `attr_key_id`, `goods_id`, `attr_value_name`, `remark`, `sort`, `created_at`, `updated_at`) VALUES ('fbce75ca-5503-467b-aa1d-d1f72f358c32', '1f93e085-5bb2-48c1-af77-523eda83ab13', NULL, '蓝色', '', 2048, '2020-10-15 09:20:31', '2020-10-15 09:20:36');

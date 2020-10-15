@@ -1,0 +1,9 @@
+INSERT INTO `menus`(`id`, `name`, `route`, `pid`, `created_at`, `updated_at`, `icon`, `sort`) VALUES (1, '菜单管理', '/menuManage', 110, '2020-07-09 13:58:07', '2020-08-06 11:59:12', 'MenuOutlined', 10352.2);
+INSERT INTO `menus`(`id`, `name`, `route`, `pid`, `created_at`, `updated_at`, `icon`, `sort`) VALUES (101, '用户管理', '/userManage', 110, '2020-07-31 11:41:19', '2020-08-06 11:57:24', 'TeamOutlined', 10352.2);
+INSERT INTO `menus`(`id`, `name`, `route`, `pid`, `created_at`, `updated_at`, `icon`, `sort`) VALUES (102, '角色管理', '/roleManage', 110, '2020-07-31 11:41:37', '2020-08-06 11:59:14', 'UserOutlined', 10352.2);
+INSERT INTO `menus`(`id`, `name`, `route`, `pid`, `created_at`, `updated_at`, `icon`, `sort`) VALUES (110, '后台管理', NULL, 0, '2020-08-06 11:46:55', '2020-09-01 14:23:33', 'SettingOutlined', 1536);
+INSERT INTO `menus`(`id`, `name`, `route`, `pid`, `created_at`, `updated_at`, `icon`, `sort`) VALUES (111, '微信用户', '/wxUser', 0, '2020-08-31 15:53:04', '2020-09-01 14:23:28', 'TeamOutlined', 3072);
+INSERT INTO `menus`(`id`, `name`, `route`, `pid`, `created_at`, `updated_at`, `icon`, `sort`) VALUES (112, '商品分类管理', '/category', 0, '2020-09-01 10:42:12', '2020-09-01 14:23:19', 'AppstoreOutlined', 13312);
+INSERT INTO `menus`(`id`, `name`, `route`, `pid`, `created_at`, `updated_at`, `icon`, `sort`) VALUES (113, '商品管理', '/goods', 0, '2020-09-01 14:13:56', '2020-09-01 14:23:24', 'ShoppingOutlined', 14336);
+INSERT INTO `menus`(`id`, `name`, `route`, `pid`, `created_at`, `updated_at`, `icon`, `sort`) VALUES (114, '首页轮播图管理', '/banner', 0, '2020-09-02 17:41:05', '2020-09-03 16:18:05', 'FileImageOutlined', 6712.1);
+INSERT INTO `menus`(`id`, `name`, `route`, `pid`, `created_at`, `updated_at`, `icon`, `sort`) VALUES (115, '首页导航菜单管理', '/homeNav', 0, '2020-09-03 10:39:40', '2020-09-03 16:18:08', 'MenuOutlined', 11832.1);

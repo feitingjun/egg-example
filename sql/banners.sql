@@ -1,0 +1,4 @@
+INSERT INTO `banners`(`id`, `name`, `goods_id`, `url`, `sort`, `created_at`, `updated_at`) VALUES ('04ab0bdc-2083-4705-a17a-359e1b9d1e7e', 'U盘', NULL, '/upload/15994418506263262.jpg', 2, '2020-09-04 18:05:35', '2020-09-07 09:25:04');
+INSERT INTO `banners`(`id`, `name`, `goods_id`, `url`, `sort`, `created_at`, `updated_at`) VALUES ('416d2e22-94d6-4e89-8fbb-3c6685fd5c16', '耳机', NULL, '/upload/15994418564767592.jpg', 2048, '2020-09-03 10:07:04', '2020-09-29 14:28:52');
+INSERT INTO `banners`(`id`, `name`, `goods_id`, `url`, `sort`, `created_at`, `updated_at`) VALUES ('ae678235-3730-41f3-9aa8-ed2694462931', '手机', '44f31b31-cc9f-4eca-b6de-cf4b777a4900', '/upload/15994418859006212.jpg', 4096, '2020-09-07 09:24:45', '2020-09-29 14:29:02');
+INSERT INTO `banners`(`id`, `name`, `goods_id`, `url`, `sort`, `created_at`, `updated_at`) VALUES ('ce60d3d1-195d-48d9-8bab-29162596e858', '红酒', NULL, '/upload/1599441874398780.jpg', 6144, '2020-09-07 09:24:34', '2020-09-07 09:24:34');

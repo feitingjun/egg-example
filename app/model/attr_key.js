@@ -30,7 +30,7 @@ module.exports = app => {
     updatedAt: 'updated_at',
   });
   AttrKey.associate = () => {
-    app.model.AttrKey.belongsTo(app.model.Category, { foreignKey: 'category_id', targetKey: 'id' });
+    app.model.AttrKey.hasMany(app.model.AttrValue, { foreignKey: 'attr_key_id', targetKey: 'id'});
   }
   return AttrKey;
 };

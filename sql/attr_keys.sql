@@ -1,0 +1,2 @@
+INSERT INTO `attr_keys`(`id`, `category_id`, `attr_key_name`, `sort`, `remark`, `created_at`, `updated_at`) VALUES ('1f93e085-5bb2-48c1-af77-523eda83ab13', '47fb4faa-8631-40cc-a980-9c181a2a8a5e', '颜色', 2, NULL, '2020-10-14 17:14:40', '2020-10-14 17:14:40');
+INSERT INTO `attr_keys`(`id`, `category_id`, `attr_key_name`, `sort`, `remark`, `created_at`, `updated_at`) VALUES ('511f301f-300f-44b8-926d-82ea07119ccc', '47fb4faa-8631-40cc-a980-9c181a2a8a5e', '尺寸1', 2048, '', '2020-10-14 17:14:48', '2020-10-14 17:16:12');

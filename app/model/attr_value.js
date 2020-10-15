@@ -15,7 +15,7 @@ module.exports = app => {
         notEmpty: { msg: '请关联分类' }
       }
     },
-    goods_id: UUID,
+    goods_id: UUID, //专属于某一个商品
     attr_value_name: {
       type: STRING,
       allowNull: false,//非空
@@ -30,8 +30,5 @@ module.exports = app => {
     createdAt: 'created_at',
     updatedAt: 'updated_at',
   });
-  AttrValue.associate = () => {
-    app.model.AttrValue.belongsTo(app.model.AttrKey, { foreignKey: 'attr_key_id', targetKey: 'id' });
-  }
   return AttrValue;
 };
